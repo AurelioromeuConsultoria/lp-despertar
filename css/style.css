@@ -224,6 +224,11 @@ h3 {
   letter-spacing: 0.02em;
 }
 
+.hero__title-orange {
+  color: #ff8c00;
+  text-shadow: 0 0 18px rgba(255, 140, 0, 0.45);
+}
+
 .hero__lead {
   color: var(--muted);
   font-size: 1.1rem;

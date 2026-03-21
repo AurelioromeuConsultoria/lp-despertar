@@ -1,13 +1,25 @@
 (function () {
   "use strict";
 
-  /** @type {string} Data/hora final ISO 8601 — ajuste no HTML: data-countdown-end */
+  /** data-duration-minutes: a partir do carregamento | data-end: data/hora ISO 8601 */
   function initCountdown() {
     var el = document.getElementById("countdown");
     if (!el) return;
 
+    var durationMin = el.getAttribute("data-duration-minutes");
     var endAttr = el.getAttribute("data-end");
-    var end = endAttr ? new Date(endAttr).getTime() : Date.now() + 3 * 24 * 60 * 60 * 1000 + 5 * 60 * 60 * 1000;
+    var end;
+    if (durationMin != null && durationMin !== "") {
+      var mins = parseFloat(durationMin, 10);
+      if (!isNaN(mins) && mins > 0) {
+        end = Date.now() + mins * 60 * 1000;
+      }
+    }
+    if (typeof end === "undefined") {
+      end = endAttr
+        ? new Date(endAttr).getTime()
+        : Date.now() + 3 * 24 * 60 * 60 * 1000 + 5 * 60 * 60 * 1000;
+    }
 
     var daysEl = document.getElementById("cd-days");
     var hoursEl = document.getElementById("cd-hours");
