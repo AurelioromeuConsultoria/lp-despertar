@@ -817,44 +817,6 @@ h3 {
   border: 0;
 }
 
-/* Mobile sticky CTA */
-.mobile-cta {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  background: linear-gradient(180deg, transparent, rgba(3, 3, 3, 0.95) 20%, rgba(255, 140, 0, 0.14) 100%);
-  border-top: 1px solid rgba(255, 140, 0, 0.28);
-  backdrop-filter: blur(8px);
-}
-
-@media (max-width: 768px) {
-  .mobile-cta {
-    display: block;
-  }
-
-  body {
-    padding-bottom: 5rem;
-  }
-}
-
-.mobile-cta .btn {
-  width: 100%;
-  padding: 1rem 1.25rem;
-}
-
-.mobile-cta .btn--primary {
-  background: #ff8c00;
-  box-shadow: 0 0 20px rgba(255, 140, 0, 0.45), 0 0 40px rgba(255, 140, 0, 0.15);
-}
-
-.mobile-cta .btn--primary:hover {
-  box-shadow: 0 0 28px rgba(255, 140, 0, 0.6), 0 0 60px rgba(255, 140, 0, 0.2);
-}
-
 /* Two-column split */
 .split {
   display: grid;
