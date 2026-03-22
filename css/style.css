@@ -37,7 +37,7 @@ body {
   min-height: 100vh;
 }
 
-img {
+img:not(.logo__img) {
   max-width: 100%;
   height: auto;
   display: block;
@@ -72,7 +72,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 0;
+  padding: 0.25rem 0;
   flex-wrap: wrap;
 }
 
@@ -87,16 +87,13 @@ a:hover {
   gap: 0.5rem;
 }
 
-.logo__mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid var(--neon);
-  box-shadow: var(--glow);
-  display: grid;
-  place-items: center;
-  font-size: 0.75rem;
-  color: var(--neon);
+.top-bar a.logo .logo__img {
+  height: 68px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav {
