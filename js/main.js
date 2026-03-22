@@ -97,6 +97,30 @@
     } else {
       go(0);
     }
+
+    var autoplayMs = parseInt(root.getAttribute("data-autoplay-ms") || "0", 10);
+    if (autoplayMs >= 2500 && slides.length > 1) {
+      var autoplayPaused = false;
+      function tickAutoplay() {
+        if (!autoplayPaused && !document.hidden) {
+          go(index + 1);
+        }
+      }
+      setInterval(tickAutoplay, autoplayMs);
+      root.addEventListener("mouseenter", function () {
+        autoplayPaused = true;
+      });
+      root.addEventListener("mouseleave", function () {
+        autoplayPaused = false;
+      });
+      root.addEventListener("focusin", function () {
+        autoplayPaused = true;
+      });
+      root.addEventListener("focusout", function () {
+        autoplayPaused = false;
+      });
+      root.setAttribute("data-carousel-autoplay", "true");
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
