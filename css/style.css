@@ -1,6 +1,5 @@
 /* PMG-style landing — neon green / deep black */
 :root {
-  --accent-orange: #ff8c00;
   --neon: #00ff41;
   --neon-dim: rgba(0, 255, 65, 0.55);
   --neon-soft: rgba(0, 255, 65, 0.12);
@@ -235,7 +234,7 @@ h3 {
 }
 
 .hero__title-orange {
-  color: var(--accent-orange);
+  color: #ff8c00;
   text-shadow: 0 0 18px rgba(255, 140, 0, 0.45);
 }
 
@@ -827,8 +826,9 @@ h3 {
   right: 0;
   z-index: 99;
   padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  background: var(--accent-orange);
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(180deg, transparent, rgba(3, 3, 3, 0.95) 20%, rgba(255, 140, 0, 0.14) 100%);
+  border-top: 1px solid rgba(255, 140, 0, 0.28);
+  backdrop-filter: blur(8px);
 }
 
 @media (max-width: 768px) {
@@ -844,19 +844,15 @@ h3 {
 .mobile-cta .btn {
   width: 100%;
   padding: 1rem 1.25rem;
-  background: transparent;
-  color: #0a0a0a;
-  box-shadow: none;
+}
+
+.mobile-cta .btn--primary {
+  background: #ff8c00;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.45), 0 0 40px rgba(255, 140, 0, 0.15);
 }
 
 .mobile-cta .btn--primary:hover {
-  background: rgba(0, 0, 0, 0.08);
-  box-shadow: none;
-  transform: none;
-}
-
-.mobile-cta .btn:focus-visible {
-  outline-color: #0a0a0a;
+  box-shadow: 0 0 28px rgba(255, 140, 0, 0.6), 0 0 60px rgba(255, 140, 0, 0.2);
 }
 
 /* Two-column split */
