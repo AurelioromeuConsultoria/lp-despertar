@@ -123,8 +123,32 @@
     }
   }
 
+  function initHeroSlideshow() {
+    var root = document.querySelector("[data-hero-slideshow]");
+    if (!root) return;
+    var slides = root.querySelectorAll(".hero__slide");
+    if (slides.length < 2) return;
+    var ms = parseInt(root.getAttribute("data-interval") || "3000", 10);
+    if (ms < 1000) ms = 3000;
+    var index = 0;
+
+    function show(j) {
+      index = j % slides.length;
+      slides.forEach(function (slide, k) {
+        slide.classList.toggle("is-active", k === index);
+      });
+    }
+
+    setInterval(function () {
+      if (!document.hidden) {
+        show(index + 1);
+      }
+    }, ms);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initCountdown();
+    initHeroSlideshow();
     initCarousel("[data-carousel-modules]");
     initCarousel("[data-carousel-testimonials]");
   });
